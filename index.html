@@ -4,14 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>My Library</title>
 </head>
 <body>
-   <header></header>
+   <header>
+    <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>bookshelf</title><path d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z" /></svg>
+        <h1>Eligio's Library</h1>
+    </div>
+    <button id="newbook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+        <p>Add a New Book</p>
+    </button>
+   </header>
+  
    <div class="leftbar"></div>
+   <div class="formarea">
+    <form action="">
+
+        <label for="title">Title of the book:</label>
+        <input type="text" name="book_title" id="title" required>
+
+        <label for="title">Author of the book:</label>
+        <input type="text" name="book_title" id="title" required>
+
+        <label for="pages">N° of pages:</label>
+        <input type="number" name="n_pages" id="pages" min="1" required>
+
+        <p>Read?</p>
+        <div>
+            <input type="radio" name="read" id="read_yes" value="Yes" checked>
+            <label for="read_yes">Yes</label>
+            
+        </div>
+        <div>
+            <input type="radio" name="read" id="read_no" value="No">
+            <label for="read_no">No</label>
+        </div>  
+        <button type="submit" id="addBook">ADD</button>
+    </form>
+   </div>
    <div class="rightbar"></div>
+
    
     
 </body>
