@@ -67,7 +67,7 @@ header{
     fill: var(--dark-blue);
     margin-right:10px;
 }
-#newbook:hover{
+#newbook:hover, #delbook:hover{
     cursor: pointer;
    
 }
@@ -168,26 +168,27 @@ input[type="radio"]{
 
 .book_card svg{
     align-self: start;
+    
     grid-row: 1/3;
     fill:var(--dark-blue);
     margin-right:20px;
    
 }
-.book_card p:nth-of-type(1){
+.book_card #card_title{
     font-size: 25px;
     grid-column:2/3;
     grid-row: 1/2;
     align-self: end;
     color:var(--dark-blue);
 }
-.book_card p:nth-of-type(2){
+.book_card #card_author{
     font-size: 12px;
     grid-column:2/3;
     grid-row: 2/3;
     align-self:start;
     color:var(--light-blue);
 }
-.book_card p:nth-of-type(3){
+.book_card #card_pages{
     font-size: 25px;
     grid-column:3/4;
     grid-row: 1/2;
@@ -201,6 +202,25 @@ input[type="radio"]{
     align-self:start;
     color:var(--light-blue);
 }
+.book_card p:nth-of-type(5){
+    font-size: 15px;
+    grid-column:4/5;
+    grid-row: 1/2;
+    align-self:center;
+    color:var(--dark-blue);
+}
+#delbook{
+    border-radius: 5px;
+    border:none;
+    width:60%;
+    height:100%;
+    font-size: 20px;
+    justify-self: center;
+    color:var(--light-yellow);
+    background-color:var(--dark-blue);
+
+}
+
 /*TOGGLE BUTTON*/
 
 .rightbar{
