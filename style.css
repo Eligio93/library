@@ -178,21 +178,21 @@ input[type="radio"]{
     margin-right:20px;
    
 }
-.book_card #card_title{
+.book_card .card_title{
     font-size: 25px;
     grid-column:2/3;
     grid-row: 1/2;
     align-self: end;
     color:var(--dark-blue);
 }
-.book_card #card_author{
+.book_card .card_author{
     font-size: 12px;
     grid-column:2/3;
     grid-row: 2/3;
     align-self:start;
     color:var(--light-blue);
 }
-.book_card #card_pages{
+.book_card .card_pages{
     font-size: 25px;
     grid-column:3/4;
     grid-row: 1/2;

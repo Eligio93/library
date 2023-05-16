@@ -25,15 +25,15 @@ function displayBook(myLibrary) {
         leftBar.appendChild(newDiv);
         newDiv.innerHTML=svgBook;
         let cardTitle = document.createElement("p");
-        cardTitle.id="card_title";
+        cardTitle.classList.add("card_title");
         cardTitle.textContent = myLibrary[i].title;
         newDiv.appendChild(cardTitle);
         let cardAuthor = document.createElement("p");
-        cardAuthor.id="card_author";
+        cardAuthor.classList.add("card_author")
         cardAuthor.textContent = myLibrary[i].author;
         newDiv.appendChild(cardAuthor);
         let cardPages = document.createElement("p");
-        cardPages.id="card_pages"
+        cardPages.classList.add("card_pages")
         cardPages.textContent = myLibrary[i].pages;
         newDiv.appendChild(cardPages);
         let paragraph=document.createElement("p");
