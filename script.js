@@ -91,7 +91,7 @@ quitForm.addEventListener("click", function(e){
     e.preventDefault();
     form.style.display="none";
 })
-//button to delete book
+//button to delete book from display and from the array
 leftBar.addEventListener("click", function(event){
     let target=event.target;
     console.log(target);
@@ -99,14 +99,9 @@ leftBar.addEventListener("click", function(event){
         let bookCard=target.parentNode;
         let index=bookCard.getAttribute("data-book");
         myLibrary.splice(index,1);
+        //reprint the updated library on the screen
         displayBook(myLibrary);
         console.log(myLibrary);
-        
-
-
-        // bookCard.remove();
-        // console.log(bookCard)
-        
     }
 })
 
