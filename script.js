@@ -43,11 +43,12 @@ function displayBook(myLibrary) {
         paragraph2.textContent="Read?"
         newDiv.appendChild(paragraph2);
         let deleteBtn=document.createElement("button");
-        deleteBtn.id="delbook";
+        deleteBtn.classList.add("delbook");
         deleteBtn.textContent="X"
         newDiv.appendChild(deleteBtn);
     }
 }
+
 
 function addBookToLibrary() {
     let title = document.getElementById("title").value;
@@ -76,9 +77,12 @@ addBook.addEventListener("click", function (event) {
         console.log(myLibrary);
         displayBook(myLibrary);
     }
+   
 });
 //Button to quit the form
 quitForm.addEventListener("click", function(e){
     e.preventDefault();
     form.style.display="none";
 })
+//button to delete book
+
