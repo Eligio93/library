@@ -94,10 +94,18 @@ quitForm.addEventListener("click", function(e){
 //button to delete book
 leftBar.addEventListener("click", function(event){
     let target=event.target;
+    console.log(target);
     if(target.classList.contains("delbook")){
         let bookCard=target.parentNode;
-        bookCard.remove();
-        console.log(bookCard)
+        let index=bookCard.getAttribute("data-book");
+        myLibrary.splice(index,1);
+        displayBook(myLibrary);
+        console.log(myLibrary);
+        
+
+
+        // bookCard.remove();
+        // console.log(bookCard)
         
     }
 })
