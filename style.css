@@ -213,7 +213,7 @@ input[type="radio"]{
     align-self:center;
     color:var(--dark-blue);
 }
-#delbook{
+.delbook{
     grid-column: 5/6;
     grid-row: 1/2;
     border-radius: 5px;
@@ -221,14 +221,16 @@ input[type="radio"]{
     width:60%;
     height:100%;
     font-size: 20px;
-    justify-self: center;
-    /* color:var(--light-yellow);
-    background-color:var(--dark-blue); */
+    justify-self: center; 
+    z-index: 1;
+    background-color: var(--dark-blue);
+    color:#9FC131
+  
 }
-#delbook:hover{
-    cursor:pointer;
+.delbook:hover{
+    cursor:pointer !important;
+   
 }
-
 /*TOGGLE BUTTON*/
 
 .rightbar{
