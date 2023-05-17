@@ -9,18 +9,15 @@
 *{
     padding:0;
     margin:0;
-    
     font-family: 'Roboto', sans-serif;
 }
+
 body{
     min-height:100vh;
-    background-color: var(--light-blue)
-}
-body{
-   display:grid;
-   grid-template-columns: 1fr 1fr;
-   grid-template-rows: 100px auto;
-
+    background-color: var(--light-blue);
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px auto;
 }
 
 /* Style of the Header*/
@@ -49,7 +46,7 @@ header{
 }
 
 /*Button that adds a new book on the header*/
-#newbook{
+#open_form{
     display:flex;
     align-items: center;
     border:none;
@@ -62,16 +59,16 @@ header{
     font-weight: bolder;
     
 }
-#newbook svg{
+#open_form svg{
     max-height:100%; 
     fill: var(--dark-blue);
     margin-right:10px;
 }
-#newbook:hover{
+#open_form:hover{
     cursor: pointer;
    
 }
-#newbook:active{
+#open_form:active{
     border:3px inset var(--light-blue);
 }
 
@@ -81,11 +78,10 @@ header{
     grid-row: 2/3;
     position:relative;
 }
+
 form{
     display:none;
     flex-direction:column;
-    /* width:400px;
-    height:300px;  */
     border:3px solid var(--dark-yellow);
     border-radius:5px;
     background-color: var(--green);
@@ -146,7 +142,7 @@ input[type="radio"]{
     font-size:14px;
 }
 
-.leftbar{
+.leftbar, .rightbar{
     grid-column:1/2;
     grid-row: 2/3;
     display:grid;
@@ -213,7 +209,7 @@ input[type="radio"]{
     align-self:center;
     color:var(--dark-blue);
 }
-.delbook{
+.delete_book{
     grid-column: 5/6;
     grid-row: 1/2;
     border-radius: 5px;
@@ -227,7 +223,7 @@ input[type="radio"]{
     color:#9FC131
   
 }
-.delbook:hover{
+.delete_book:hover{
     cursor:pointer !important;
    
 }
