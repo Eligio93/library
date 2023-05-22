@@ -164,6 +164,7 @@ input[type="radio"]{
     border-radius: 5px;
     background-color:var(--green);
     padding:10px;
+    box-shadow: 5px 5px 15px 5px var(--dark-blue);
 }
 
 .book_card svg{
@@ -292,13 +293,9 @@ input[type="radio"]{
   }
   
   /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+h2{
+    color:var(--light-yellow)
+}
 
   .rightbar{
     grid-column:2/3;
