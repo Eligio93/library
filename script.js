@@ -15,6 +15,15 @@ function Book(title, author, pages, read) {
     this.read=read 
 }
 
+Book.prototype.changeStatus= function(readStatus){
+    if(readStatus=="Yes"){
+        this.read="No";
+    }else{
+        this.read="Yes";
+    }
+    displayBookCard(myLibrary);
+}
+
 
 function addBookToLibrary() {
     let title=document.getElementById("title").value;
@@ -75,6 +84,7 @@ function displayBookCard(myLibrary){
         let inputSwitch = document.createElement("input");
         inputSwitch.type = "checkbox";
         inputSwitch.classList.add("toggle_switch");
+        inputSwitch.setAttribute("data-switch",i);
         if (myLibrary[i].read === "No") {
           inputSwitch.checked = true;
         }
@@ -111,7 +121,7 @@ function displayBookCard(myLibrary){
         }
 
     }
-
+console.log(myLibrary)
 }
 
 
@@ -135,7 +145,41 @@ addBook.addEventListener("click",function(e){
     form.style.display="none";
     console.log(myLibrary);
     displayBookCard(myLibrary);
+    
 
     
 
 })
+//implement functionality to delete buttons
+leftBar.addEventListener("click",function(event){
+    let deleteButton=event.target.closest(".delete_book");
+    let parentElement=deleteButton.parentNode;
+    let index= parentElement.getAttribute("data-book");
+   
+    parentElement.remove();
+    myLibrary.splice(index,1);
+ 
+    displayBookCard(myLibrary);
+    
+})
+rightBar.addEventListener("click",function(event){
+    let deleteButton=event.target.closest(".delete_book");
+    let parentElement=deleteButton.parentNode;
+    let index= parentElement.getAttribute("data-book");
+    parentElement.remove();
+    myLibrary.splice(index,1);
+    displayBookCard(myLibrary);
+    
+})
+//Function that switch the read status of the book
+window.addEventListener("click",function(event){
+    let togglebtn=event.target.closest(".toggle_switch");
+    let index=togglebtn.getAttribute("data-switch");
+    let readStatus=myLibrary[index].read;
+    myLibrary[index].changeStatus(readStatus);
+    
+})
+
+
+
+
