@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,68 +12,110 @@
     <script src="script.js" defer></script>
     <title>My Library</title>
 </head>
+
 <body>
-   <header>
-    <div class="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>bookshelf</title><path d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z" /></svg>
-        <h1>Eligio's Library</h1>
-    </div>
-    <button id="newbook">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
-        <p>Add a New Book</p>
-    </button>
-   </header>
-  
-   <div class="leftbar">
-    <h2>Read Books</h2>
-    <!-- <div class="book_card"> -->
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>book-open-blank-variant</title><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z" /></svg>
-        <p id="card_title">Harry Potter</p>
-        <p id="card_author">J.k. ROwling</p>
-        <p id="card_pages">327</p>
-        <p>pages</p>
-        <p>Read?</p> -->
-        <!-- Label input -->
-        <!-- <button id="delbook">X</button> -->
-        
 
-    </div>
-   </div>
-   <div class="formarea">
-    <form action="">
-
-        <label for="title">Title of the book:</label>
-        <input type="text" name="book_title" id="title" required>
-
-        <label for="author">Author of the book:</label>
-        <input type="text" name="book_author" id="author" required>
-
-        <label for="pages">N° of pages:</label>
-        <input type="number" name="n_pages" id="pages" min="1" required>
-
-        <p>Read?</p>
-        <div>
-            <input type="radio" name="read" id="read_yes" value="Yes" checked>
-            <label for="read_yes">Yes</label>
-            
+    <header>
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>bookshelf</title>
+                <path d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z" />
+            </svg>
+            <h1>Eligio's Library</h1>
         </div>
-        <div>
-            <input type="radio" name="read" id="read_no" value="No">
-            <label for="read_no">No</label>
-        </div>
-        <div id="formbtn">
-            <button id="quitForm">CANCEL</button>
-            <button type="submit" id="addBook">ADD BOOK</button>
-            
-        </div> 
-        
-    </form>
-   </div>
-   <div class="rightbar">
-    <h2>Unread Books</h2>
-   </div>
 
-   
+        <button id="open_form">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <title>plus</title>
+                <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+            </svg>
+            <p>Add a New Book</p>
+        </button>
+    </header>
+
+    <div class="leftbar">
+        <h2>Read Books</h2>
+
+
+        <!-- <div class="book_card" data-book="0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>book-open-blank-variant</title><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z"></path></svg>
+            <p class="card_title">Harry Potter</p>
+            <p class="card_author">Rowling</p>
+            <p class="card_pages">4</p>
+            <p>pages</p>
+            <p>Read?</p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider">
+                <p>No</p>
+                <p>Yes</p>
+                </span>
+            </label>
+            <button class="delete_book">X</button>
+        </div>
+
+        <div class="book_card" data-book="1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>book-open-blank-variant</title><path d="M21,5C19.89,4.65 18.67,4.5 17.5,4.5C15.55,4.5 13.45,4.9 12,6C10.55,4.9 8.45,4.5 6.5,4.5C4.55,4.5 2.45,4.9 1,6V20.65C1,20.9 1.25,21.15 1.5,21.15C1.6,21.15 1.65,21.1 1.75,21.1C3.1,20.45 5.05,20 6.5,20C8.45,20 10.55,20.4 12,21.5C13.35,20.65 15.8,20 17.5,20C19.15,20 20.85,20.3 22.25,21.05C22.35,21.1 22.4,21.1 22.5,21.1C22.75,21.1 23,20.85 23,20.6V6C22.4,5.55 21.75,5.25 21,5M21,18.5C19.9,18.15 18.7,18 17.5,18C15.8,18 13.35,18.65 12,19.5V8C13.35,7.15 15.8,6.5 17.5,6.5C18.7,6.5 19.9,6.65 21,7V18.5Z"></path></svg>
+            <p class="card_title">Harry Potter</p>
+            <p class="card_author">Rowling</p>
+            <p class="card_pages">4</p>
+            <p>pages</p>
+            <p>Read?</p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider">
+                <p>No</p>
+                <p>Yes</p>
+                </span>
+            </label>
+            <button class="delete_book">X</button>
+        </div> -->
+
+
+    </div>
     
+
+
+    <div class="formarea">
+        <form action="" id="form">
+
+            <label for="title">Title of the book:</label>
+            <input type="text" name="book_title" id="title" required>
+
+            <label for="author">Author of the book:</label>
+            <input type="text" name="book_author" id="author" required>
+
+            <label for="pages">N° of pages:</label>
+            <input type="number" name="n_pages" id="pages" min="1" required>
+
+            <p>Read?</p>
+            <div>
+                <input type="radio" name="read" id="read_yes" value="Yes" checked>
+                <label for="read_yes">Yes</label>
+
+            </div>
+            <div>
+                <input type="radio" name="read" id="read_no" value="No">
+                <label for="read_no">No</label>
+            </div>
+            <div id="formbtn">
+                <button id="quitForm">CANCEL</button>
+                <button type="submit" id="addBook">ADD BOOK</button>
+
+            </div>
+
+        </form>
+    </div>
+
+
+
+
+    <div class="rightbar">
+        <h2>Unread Books</h2>
+    </div>
+
+
+
 </body>
+
 </html>
