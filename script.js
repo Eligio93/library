@@ -155,10 +155,8 @@ leftBar.addEventListener("click",function(event){
     let deleteButton=event.target.closest(".delete_book");
     let parentElement=deleteButton.parentNode;
     let index= parentElement.getAttribute("data-book");
-   
     parentElement.remove();
     myLibrary.splice(index,1);
- 
     displayBookCard(myLibrary);
     
 })
