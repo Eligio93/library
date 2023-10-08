@@ -15,6 +15,7 @@ class Book{
         this.pages = pages;
         this.read = read
     }
+    
 }
 
 Book.prototype.changeStatus = function (readStatus) {
